@@ -1,0 +1,4 @@
+mkdir docker && cd docker
+wget https://library.ahadiani.ca/install_docker_nproxyman.sh
+chmod +x install_docker_nproxyman.sh
+./install_docker_nproxyman.sh
