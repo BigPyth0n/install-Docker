@@ -1,0 +1,20 @@
+# اول در روت یه پوشه درست کردم به اسم 
+# Anaconda
+# داخل تون فولدر فایل داکر کامپوزم رو ساختم
+# بعد در پروکسی سرورم یک دامنه بهش وصل کرد
+
+
+version: '3.8'
+
+services:
+  anaconda:
+    image: continuumio/anaconda3:latest
+    container_name: anaconda_container
+    restart: unless-stopped
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/root/Anaconda
+    environment:
+      - PASSWORD=Xman151360
+    command: "/opt/conda/bin/jupyter notebook --notebook-dir=/root/Anaconda --ip='*' --port=8888 --no-browser --allow-root --NotebookApp.token=''"
